@@ -240,18 +240,4 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 - Website: [brandonallshouse.dev](https://brandonallshouse.dev)
 - GitHub: [@Brandon-Allshouse](https://github.com/Brandon-Allshouse)
 - LinkedIn: [Brandon Allshouse](https://www.linkedin.com/in/brandon-allshouse-37776a274/)
-- Email: brandon.allshouse@sru.edu
-
----
-
-## 🎓 About the Developer
-
-Cybersecurity student at Slippery Rock University with a minor in Homeland Security. Co-founder of Summit Automation, where we're revolutionizing business workflows with AI. Passionate about ethical hacking, cloud security, and building secure applications.
-
-**Graduating**: Spring 2027
-**Location**: Pennsylvania, USA
-**Interests**: Cybersecurity, AI Automation, Web Development, Ethical Hacking
-
----
-
-*Built with ❤️ and lots of ☕ by Brandon Allshouse*
+- Email: bja1005@sru.edu
