@@ -4,18 +4,18 @@ const About = () => {
   const [visibleSkills, setVisibleSkills] = useState([]);
 
   const skills = [
-    { name: 'Python', level: 90, category: 'backend', icon: '🐍' },
-    { name: 'JavaScript', level: 85, category: 'frontend', icon: '⚡' },
-    { name: 'C++', level: 80, category: 'backend', icon: '🔧' },
-    { name: 'Linux', level: 90, category: 'security', icon: '🐧' },
-    { name: 'Bash', level: 85, category: 'security', icon: '💻' },
-    { name: 'Docker', level: 75, category: 'cloud', icon: '🐳' },
-    { name: 'AWS', level: 70, category: 'cloud', icon: '☁️' },
-    { name: 'React', level: 80, category: 'frontend', icon: '⚛️' },
-    { name: 'Node.js', level: 75, category: 'backend', icon: '🟢' },
-    { name: 'Cybersecurity', level: 88, category: 'security', icon: '🛡️' },
-    { name: 'Ethical Hacking', level: 82, category: 'security', icon: '🎯' },
-    { name: 'Cloud Security', level: 78, category: 'security', icon: '🔒' }
+    { name: 'JavaScript', level: 92, category: 'frontend', icon: '⚡' }, // 3 repos - highest usage
+    { name: 'TypeScript', level: 90, category: 'frontend', icon: '🔷' }, // 3 repos - highest usage
+    { name: 'Python', level: 85, category: 'backend', icon: '🐍' }, // 2 repos - solid usage
+    { name: 'React', level: 88, category: 'frontend', icon: '⚛️' }, // Used in portfolio
+    { name: 'HTML/CSS', level: 82, category: 'frontend', icon: '🎨' }, // 1 repo + web dev
+    { name: 'Node.js', level: 80, category: 'backend', icon: '🟢' }, // Backend JS work
+    { name: 'Linux', level: 88, category: 'security', icon: '🐧' }, // Cybersecurity focus
+    { name: 'Bash', level: 85, category: 'security', icon: '💻' }, // Shown in GitHub
+    { name: 'Docker', level: 75, category: 'cloud', icon: '🐳' }, // Summit Automation
+    { name: 'AWS', level: 72, category: 'cloud', icon: '☁️' }, // Summit Automation
+    { name: 'Cybersecurity', level: 90, category: 'security', icon: '🛡️' }, // Primary focus
+    { name: 'Ethical Hacking', level: 85, category: 'security', icon: '🎯' } // Academic focus
   ];
 
   const experiences = [

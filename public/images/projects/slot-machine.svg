@@ -1,0 +1,75 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="slotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#eab308;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="machineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#slotGrad)"/>
+  
+  <!-- Terminal/Console window -->
+  <rect x="50" y="50" width="700" height="500" fill="url(#machineGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="3" rx="20"/>
+  
+  <!-- Screen area -->
+  <rect x="80" y="100" width="640" height="300" fill="url(#screenGrad)" stroke="rgba(34,197,94,0.5)" stroke-width="2" rx="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="80" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="bold">🎰 PYTHON SLOT MACHINE 🎰</text>
+  
+  <!-- Console output -->
+  <text x="100" y="140" fill="#22c55e" font-family="Monaco, monospace" font-size="14">$ python slot_machine.py</text>
+  
+  <text x="100" y="170" fill="#fbbf24" font-family="Monaco, monospace" font-size="16" font-weight="bold">🎰 Welcome to Python Slots! 🎰</text>
+  <text x="100" y="190" fill="#ffffff" font-family="Monaco, monospace" font-size="12">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</text>
+  
+  <text x="100" y="220" fill="#ffffff" font-family="Monaco, monospace" font-size="14">Balance: $100.00</text>
+  <text x="100" y="240" fill="#9ca3af" font-family="Monaco, monospace" font-size="12">Enter bet amount (1-10): 5</text>
+  
+  <!-- Slot machine reels -->
+  <rect x="200" y="260" width="400" height="80" fill="rgba(0,0,0,0.8)" stroke="#22c55e" stroke-width="2" rx="10"/>
+  
+  <!-- Individual reels -->
+  <rect x="220" y="275" width="100" height="50" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="1" rx="5"/>
+  <text x="270" y="310" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="32">🍒</text>
+  
+  <rect x="350" y="275" width="100" height="50" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="1" rx="5"/>
+  <text x="400" y="310" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="32">🍒</text>
+  
+  <rect x="480" y="275" width="100" height="50" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="1" rx="5"/>
+  <text x="530" y="310" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="32">🍒</text>
+  
+  <!-- Result text -->
+  <text x="400" y="370" text-anchor="middle" fill="#22c55e" font-family="Monaco, monospace" font-size="18" font-weight="bold">🎉 JACKPOT! 🎉</text>
+  <text x="400" y="390" text-anchor="middle" fill="#ffffff" font-family="Monaco, monospace" font-size="14">You won $25.00!</text>
+  
+  <!-- Bottom interface -->
+  <rect x="80" y="420" width="640" height="100" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="1" rx="10"/>
+  
+  <text x="100" y="450" fill="#ffffff" font-family="Monaco, monospace" font-size="12">New Balance: $125.00</text>
+  <text x="100" y="470" fill="#9ca3af" font-family="Monaco, monospace" font-size="12">Play again? (y/n): y</text>
+  <text x="100" y="490" fill="#22c55e" font-family="Monaco, monospace" font-size="12">Good luck! 🍀</text>
+  
+  <!-- Side decorations -->
+  <circle cx="40" cy="300" r="25" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" stroke-width="2"/>
+  <text x="40" y="305" text-anchor="middle" fill="#fbbf24" font-family="Arial, sans-serif" font-size="20">💰</text>
+  
+  <circle cx="760" cy="300" r="25" fill="rgba(34,197,94,0.3)" stroke="#22c55e" stroke-width="2"/>
+  <text x="760" y="305" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="20">🎲</text>
+  
+  <!-- Code info -->
+  <rect x="300" y="530" width="200" height="30" fill="rgba(168,85,247,0.2)" stroke="#a855f7" stroke-width="1" rx="15"/>
+  <text x="400" y="550" text-anchor="middle" fill="#a855f7" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Python • OOP • Game Logic</text>
+</svg>

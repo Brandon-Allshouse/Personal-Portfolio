@@ -14,6 +14,7 @@ const Projects = () => {
       technologies: ['Python', 'JavaScript', 'AWS', 'Docker', 'AI/ML', 'React', 'Node.js'],
       github: '#',
       demo: 'https://summitautomation.io',
+      image: '/images/projects/summit-automation.svg',
       featured: true,
       status: 'Live',
       year: '2025',
@@ -39,6 +40,7 @@ const Projects = () => {
       technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
       github: '#',
       demo: 'https://romeoforestry.com',
+      image: '/images/projects/romeo-forestry.svg',
       featured: true,
       status: 'Live',
       year: '2024',
@@ -64,6 +66,7 @@ const Projects = () => {
       technologies: ['Python', 'Cryptography', 'Security Analysis'],
       github: 'https://github.com/Brandon-Allshouse/CodeCracker',
       demo: '#',
+      image: '/images/projects/codecracker.svg',
       featured: true,
       status: 'Open Source',
       year: '2024',
@@ -89,6 +92,7 @@ const Projects = () => {
       technologies: ['HTML', 'Cybersecurity', 'Web Security'],
       github: 'https://github.com/Brandon-Allshouse/Cybr301Final',
       demo: '#',
+      image: '/images/projects/cybr301-final.svg',
       featured: false,
       status: 'Academic',
       year: '2024',
@@ -114,6 +118,7 @@ const Projects = () => {
       technologies: ['Python', 'OOP', 'Game Logic'],
       github: 'https://github.com/Brandon-Allshouse/Slot-Machine',
       demo: '#',
+      image: '/images/projects/slot-machine.svg',
       featured: false,
       status: 'Completed',
       year: '2024',
@@ -139,6 +144,7 @@ const Projects = () => {
       technologies: ['React', 'Tailwind CSS', 'Vite', 'JavaScript'],
       github: 'https://github.com/Brandon-Allshouse/Personal-Portfolio',
       demo: 'https://brandonallshouse.dev',
+      image: '/images/projects/personal-portfolio.svg',
       featured: true,
       status: 'Live',
       year: '2025',
@@ -247,6 +253,27 @@ const Projects = () => {
             >
               <div className={`card h-full ${project.featured ? 'pearl-card' : ''}`}>
                 <div className={project.featured ? 'pearl-card-content' : ''}>
+                  {/* Project Image */}
+                  {project.image && (
+                    <div className="mb-6 relative overflow-hidden rounded-lg">
+                      <img 
+                        src={project.image} 
+                        alt={`${project.title} screenshot`}
+                        className="w-full h-48 md:h-56 lg:h-64 object-cover transition-transform duration-300 hover:scale-105"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      {project.status === 'Live' && (
+                        <div className="absolute top-3 right-3 bg-green-500/90 text-white px-2 py-1 rounded-full text-xs font-semibold flex items-center">
+                          <span className="w-2 h-2 bg-white rounded-full animate-pulse mr-1"></span>
+                          Live
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   {/* Project Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center">
