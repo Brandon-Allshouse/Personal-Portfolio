@@ -23,15 +23,6 @@ const Footer = () => {
       )
     },
     {
-      name: 'Summit Automation',
-      url: 'https://summitautomation.io',
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
-      )
-    },
-    {
       name: 'Email',
       url: 'mailto:brandon.allshouse@sru.edu',
       icon: (
@@ -42,173 +33,37 @@ const Footer = () => {
     }
   ];
 
-  const footerSections = [
-    {
-      title: 'Navigation',
-      links: [
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#about' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Contact', href: '#contact' }
-      ]
-    },
-    {
-      title: 'Projects',
-      links: [
-        { name: 'Summit Automation', href: 'https://summitautomation.io', external: true },
-        { name: 'Romeo Forestry', href: 'https://romeoforestry.com', external: true },
-        { name: 'GitHub Repositories', href: 'https://github.com/Brandon-Allshouse', external: true }
-      ]
-    },
-    {
-      title: 'Connect',
-      links: [
-        { name: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/brandon-allshouse-37776a274/', external: true },
-        { name: 'Email Me', href: 'mailto:brandon.allshouse@sru.edu', external: true },
-        { name: 'Schedule a Call', href: '#contact' }
-      ]
-    }
-  ];
-
-  const handleNavClick = (href) => {
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
     <footer className="bg-gray-900 border-t border-gray-800">
-      <div className="section-container">
-        {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid lg:grid-cols-4 gap-12">
-            {/* Brand Section */}
-            <div className="lg:col-span-1">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold">
-                  <span className="pearl-text">Brandon</span>
-                  <span className="text-white">.dev</span>
-                </h3>
-                <p className="text-gray-400 mt-3 leading-relaxed">
-                  Cybersecurity student, Co-founder of Summit Automation, and passionate developer 
-                  building secure, innovative solutions.
-                </p>
-              </div>
+      <div className="section-container py-12">
+        <div className="flex flex-col items-center text-center">
+          {/* Logo */}
+          <h3 className="text-2xl font-bold mb-4">
+            <span className="text-primary-400">Brandon</span>
+            <span className="text-white">.dev</span>
+          </h3>
 
-              {/* Quick Stats */}
-              <div className="mb-6">
-                <div className="flex items-center mb-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
-                  <span className="text-sm text-gray-400">Available for opportunities</span>
-                </div>
-                <div className="flex items-center mb-2">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full mr-2"></div>
-                  <span className="text-sm text-gray-400">Based in Pennsylvania</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-accent-500 rounded-full mr-2"></div>
-                  <span className="text-sm text-gray-400">Graduating Spring 2027</span>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-4">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target={link.url.startsWith('mailto:') ? '_self' : '_blank'}
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-primary-500 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary-400 transition-all duration-300 hover:scale-105 hover:shadow-glow-red group pearl-shimmer"
-                    aria-label={link.name}
-                  >
-                    {link.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Footer Sections */}
-            {footerSections.map((section) => (
-              <div key={section.title} className="lg:col-span-1">
-                <h4 className="text-lg font-semibold text-white mb-6 pearl-text">
-                  {section.title}
-                </h4>
-                <ul className="space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link.name}>
-                      <a
-                        href={link.href}
-                        target={link.external ? '_blank' : '_self'}
-                        rel={link.external ? 'noopener noreferrer' : undefined}
-                        onClick={(e) => {
-                          if (!link.external) {
-                            e.preventDefault();
-                            handleNavClick(link.href);
-                          }
-                        }}
-                        className="text-gray-400 hover:text-primary-400 transition-colors duration-200 text-sm hover:underline flex items-center group"
-                      >
-                        {link.name}
-                        {link.external && (
-                          <svg className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                          </svg>
-                        )}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Social Links */}
+          <div className="flex gap-6 mb-8">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target={link.url.startsWith('mailto:') ? '_self' : '_blank'}
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-gray-800 hover:bg-primary-500 border border-gray-700 hover:border-primary-500 rounded-lg flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                aria-label={link.name}
+              >
+                {link.icon}
+              </a>
             ))}
           </div>
-        </div>
 
-        {/* Bottom Section */}
-        <div className="py-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Copyright */}
-            <div className="text-gray-400 text-sm text-center md:text-left">
-              <p>
-                © {currentYear} Brandon Allshouse. Built with{' '}
-                <span className="text-primary-400">React</span> +{' '}
-                <span className="text-accent-400">Tailwind CSS</span>.
-              </p>
-              <p className="mt-1">
-                Designed and developed with 💻 and ☕
-              </p>
-            </div>
-
-            {/* Tech Stack */}
-            <div className="flex items-center gap-4 text-xs text-gray-500">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>React 18</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                <span>Tailwind CSS</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                <span>Vite</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Live</span>
-              </div>
-            </div>
+          {/* Copyright */}
+          <div className="text-gray-400 text-sm">
+            <p>© {currentYear} Brandon Allshouse</p>
+            <p className="mt-2">Built with React + Tailwind CSS</p>
           </div>
-        </div>
-
-        {/* Hidden Easter Egg */}
-        <div className="py-4 text-center">
-          <p className="text-xs text-gray-600 hover:text-primary-400 transition-colors cursor-default">
-            "Always open to discussing cybersecurity, collaborating on projects, or connecting with fellow security enthusiasts!" 🛡️
-          </p>
         </div>
       </div>
     </footer>

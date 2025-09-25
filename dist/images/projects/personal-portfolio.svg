@@ -1,0 +1,102 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="portfolioGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#ef4444;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#f43f5e;stop-opacity:0.2" />
+    </linearGradient>
+    <linearGradient id="pearlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#f43f5e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#faa6ff;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#be0aff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradPortfolio" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#portfolioGrad)"/>
+  
+  <!-- Browser mockup -->
+  <rect x="40" y="40" width="720" height="520" fill="#1f2937" stroke="rgba(239,68,68,0.3)" stroke-width="2" rx="10"/>
+  
+  <!-- Browser header -->
+  <rect x="40" y="40" width="720" height="40" fill="#374151" rx="10"/>
+  <circle cx="70" cy="60" r="6" fill="#ef4444"/>
+  <circle cx="90" cy="60" r="6" fill="#f59e0b"/>
+  <circle cx="110" cy="60" r="6" fill="#10b981"/>
+  
+  <!-- URL bar -->
+  <rect x="140" y="50" width="580" height="20" fill="#1f2937" rx="10"/>
+  <text x="150" y="63" fill="#9ca3af" font-family="Monaco, monospace" font-size="11">https://brandonallshouse.dev</text>
+  
+  <!-- Header section -->
+  <rect x="40" y="80" width="720" height="80" fill="rgba(31,41,55,0.9)"/>
+  <text x="80" y="110" fill="url(#pearlGrad)" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Brandon</text>
+  <text x="170" y="110" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="bold">.dev</text>
+  
+  <!-- Navigation -->
+  <text x="400" y="110" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">About</text>
+  <text x="450" y="110" fill="#9ca3af" font-family="Arial, sans-serif" font-size="14">Projects</text>
+  <text x="510" y="110" fill="#9ca3af" font-family="Arial, sans-serif" font-size="14">Contact</text>
+  
+  <!-- Hero section -->
+  <rect x="60" y="180" width="680" height="150" fill="url(#cardGradPortfolio)" stroke="rgba(239,68,68,0.2)" stroke-width="1" rx="15"/>
+  
+  <text x="400" y="220" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Cybersecurity Student & Developer</text>
+  <text x="400" y="245" text-anchor="middle" fill="url(#pearlGrad)" font-family="Arial, sans-serif" font-size="16">Co-Founder of Summit Automation</text>
+  <text x="400" y="270" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="14">Building secure, innovative solutions for the future</text>
+  
+  <!-- Buttons -->
+  <rect x="280" y="290" width="100" height="30" fill="url(#pearlGrad)" rx="15"/>
+  <text x="330" y="308" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">View Projects</text>
+  
+  <rect x="400" y="290" width="100" height="30" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1" rx="15"/>
+  <text x="450" y="308" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Contact Me</text>
+  
+  <!-- Project cards section -->
+  <text x="80" y="370" fill="url(#pearlGrad)" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Featured Projects</text>
+  
+  <!-- Project card 1 -->
+  <rect x="80" y="385" width="180" height="120" fill="url(#cardGradPortfolio)" stroke="rgba(239,68,68,0.2)" stroke-width="1" rx="10"/>
+  <text x="170" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Summit Automation</text>
+  <text x="170" y="430" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="10">AI Business Platform</text>
+  <rect x="100" y="440" width="140" height="15" fill="rgba(34,197,94,0.2)" rx="7"/>
+  <text x="170" y="450" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="8">Python • AWS • AI/ML</text>
+  <rect x="120" y="465" width="40" height="15" fill="#22c55e" rx="7"/>
+  <text x="140" y="474" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">LIVE</text>
+  
+  <!-- Project card 2 -->
+  <rect x="280" y="385" width="180" height="120" fill="url(#cardGradPortfolio)" stroke="rgba(239,68,68,0.2)" stroke-width="1" rx="10"/>
+  <text x="370" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Romeo Forestry</text>
+  <text x="370" y="430" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="10">Professional Website</text>
+  <rect x="300" y="440" width="140" height="15" fill="rgba(34,197,94,0.2)" rx="7"/>
+  <text x="370" y="450" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="8">HTML • CSS • JS</text>
+  <rect x="320" y="465" width="40" height="15" fill="#22c55e" rx="7"/>
+  <text x="340" y="474" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">LIVE</text>
+  
+  <!-- Project card 3 -->
+  <rect x="480" y="385" width="180" height="120" fill="url(#cardGradPortfolio)" stroke="rgba(239,68,68,0.2)" stroke-width="1" rx="10"/>
+  <text x="570" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CodeCracker</text>
+  <text x="570" y="430" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="10">Security Tool</text>
+  <rect x="500" y="440" width="140" height="15" fill="rgba(168,85,247,0.2)" rx="7"/>
+  <text x="570" y="450" text-anchor="middle" fill="#a855f7" font-family="Arial, sans-serif" font-size="8">Python • Security</text>
+  <rect x="520" y="465" width="60" height="15" fill="#ef4444" rx="7"/>
+  <text x="550" y="474" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">OPEN SOURCE</text>
+  
+  <!-- Footer indication -->
+  <rect x="40" y="525" width="720" height="35" fill="#111827"/>
+  <text x="400" y="545" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">Built with React • Tailwind CSS • ❤️</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="700" cy="200" r="20" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="1"/>
+  <text x="700" y="205" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="16">🚀</text>
+  
+  <circle cx="100" cy="200" r="20" fill="rgba(250,166,255,0.1)" stroke="#faa6ff" stroke-width="1"/>
+  <text x="100" y="205" text-anchor="middle" fill="#faa6ff" font-family="Arial, sans-serif" font-size="16">✨</text>
+</svg>

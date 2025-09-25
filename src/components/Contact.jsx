@@ -1,40 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }
-  };
-
   const contactMethods = [
     {
       icon: (
@@ -44,9 +10,7 @@ const Contact = () => {
       ),
       title: 'Email',
       content: 'brandon.allshouse@sru.edu',
-      description: 'Best way to reach me for professional inquiries',
-      link: 'mailto:brandon.allshouse@sru.edu',
-      color: 'from-primary-500 to-accent-500'
+      link: 'mailto:brandon.allshouse@sru.edu'
     },
     {
       icon: (
@@ -55,10 +19,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'LinkedIn',
-      content: 'Connect with me professionally',
-      description: 'Let\'s build our network and collaborate',
-      link: 'https://www.linkedin.com/in/brandon-allshouse-37776a274/',
-      color: 'from-accent-500 to-pearl-500'
+      content: 'Brandon Allshouse',
+      link: 'https://www.linkedin.com/in/brandon-allshouse-37776a274/'
     },
     {
       icon: (
@@ -67,283 +29,45 @@ const Contact = () => {
         </svg>
       ),
       title: 'GitHub',
-      content: 'View my code and projects',
-      description: 'Open source contributions and repositories',
-      link: 'https://github.com/Brandon-Allshouse',
-      color: 'from-pearl-500 to-primary-500'
-    },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
-      ),
-      title: 'Summit Automation',
-      content: 'Business inquiries',
-      description: 'AI automation solutions for your business',
-      link: 'https://summitautomation.io',
-      color: 'from-primary-600 to-accent-600'
+      content: 'Brandon-Allshouse',
+      link: 'https://github.com/Brandon-Allshouse'
     }
   ];
 
-  const availability = {
-    status: 'Available',
-    description: 'Open to internships, collaborations, and cybersecurity opportunities',
-    nextAvailable: 'Immediate response within 24-48 hours',
-    specialties: ['Cybersecurity Consulting', 'Web Development', 'Business Automation', 'Security Analysis']
-  };
-
   return (
-    <section id="contact" className="py-20 bg-gray-800/30 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-10 right-10 w-32 h-32 bg-primary-500/5 rounded-full animate-float"></div>
-        <div className="absolute bottom-10 left-10 w-24 h-24 bg-accent-500/5 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-pearl-500/5 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
-      </div>
-
+    <section id="contact" className="py-20">
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="pearl-text">Let's Connect</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-400">
+            Contact
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Ready to discuss cybersecurity, collaborate on projects, or explore business automation? 
-            I'm always excited to connect with fellow developers, security enthusiasts, and innovators.
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Let&apos;s connect. Always open to discussing projects, cybersecurity, or just chatting about tech.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 mb-16">
-          {/* Contact Methods */}
-          <div className="lg:col-span-1 space-y-6">
-            {/* Availability Status */}
-            <div className="pearl-card">
-              <div className="pearl-card-content">
-                <div className="flex items-center mb-4">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse mr-3"></div>
-                  <h3 className="text-xl font-bold text-white">Currently {availability.status}</h3>
-                </div>
-                <p className="text-gray-300 mb-4">{availability.description}</p>
-                <div className="space-y-3">
-                  <div className="flex items-start">
-                    <svg className="w-4 h-4 text-primary-400 mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <span className="text-sm text-gray-400">{availability.nextAvailable}</span>
+        {/* Contact Methods */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {contactMethods.map((method, index) => (
+            <a
+              key={index}
+              href={method.link}
+              target={method.link.startsWith('mailto:') ? '_self' : '_blank'}
+              rel="noopener noreferrer"
+              className="card group hover:scale-105 transition-transform duration-300"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-400 transition-colors">
+                  <div className="text-white">
+                    {method.icon}
                   </div>
                 </div>
+                <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
+                <p className="text-primary-400 font-medium">{method.content}</p>
               </div>
-            </div>
-
-            {/* Specialties */}
-            <div className="card">
-              <h3 className="text-lg font-bold mb-4 pearl-text">Areas of Interest</h3>
-              <div className="space-y-2">
-                {availability.specialties.map((specialty, index) => (
-                  <div key={index} className="flex items-center">
-                    <span className="text-primary-400 mr-2">▸</span>
-                    <span className="text-gray-300 text-sm">{specialty}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Contact Methods */}
-            <div className="space-y-4">
-              {contactMethods.map((method, index) => (
-                <a
-                  key={index}
-                  href={method.link}
-                  target={method.link.startsWith('mailto:') ? '_self' : '_blank'}
-                  rel="noopener noreferrer"
-                  className="block group"
-                >
-                  <div className="card hover:scale-105 transition-transform duration-300">
-                    <div className="flex items-start">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center mr-4 group-hover:shadow-glow-red transition-shadow`}>
-                        <div className="text-white">
-                          {method.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-semibold text-white group-hover:pearl-text transition-colors">{method.title}</h4>
-                        <p className="text-primary-300 text-sm font-medium">{method.content}</p>
-                        <p className="text-gray-400 text-xs mt-1">{method.description}</p>
-                      </div>
-                      <svg className="w-4 h-4 text-gray-400 group-hover:text-primary-400 transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <div className="card">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-2 pearl-text">Send me a message</h3>
-                <p className="text-gray-400">
-                  Have a specific project in mind? Drop me a line and I'll get back to you within 24-48 hours.
-                </p>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="Your name"
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="your.email@example.com"
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-300 mb-2">
-                    Subject *
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="What's this about?"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    placeholder="Tell me about your project, collaboration idea, or just say hello..."
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-colors resize-none"
-                  ></textarea>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <p className="text-sm text-gray-400">
-                    * Required fields
-                  </p>
-                  
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`btn-primary pearl-shimmer min-w-[180px] ${
-                      isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-                    }`}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <svg className="w-4 h-4 mr-2 animate-spin" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                        </svg>
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                {/* Status Messages */}
-                {submitStatus && (
-                  <div className={`p-4 rounded-xl border ${
-                    submitStatus === 'success' 
-                      ? 'bg-green-500/10 border-green-500/30 text-green-400' 
-                      : 'bg-red-500/10 border-red-500/30 text-red-400'
-                  }`}>
-                    <div className="flex items-center">
-                      {submitStatus === 'success' ? (
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                      ) : (
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16c-.77.833.192 2.5 1.732 2.5z"/>
-                        </svg>
-                      )}
-                      <span className="font-medium">
-                        {submitStatus === 'success' 
-                          ? 'Message sent successfully! I\'ll get back to you within 24-48 hours.' 
-                          : 'Something went wrong. Please try again or reach out via email.'}
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </form>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="pearl-card max-w-4xl mx-auto">
-            <div className="pearl-card-content text-center">
-              <h3 className="text-2xl font-bold mb-4 pearl-text">Ready to Start Something Amazing?</h3>
-              <p className="text-gray-300 mb-6 text-lg">
-                Whether it's a cybersecurity project, business automation solution, or just a conversation about tech, 
-                I'm here to help bring your ideas to life.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <div className="flex items-center px-4 py-2 bg-gray-800/50 rounded-full">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
-                  <span className="text-sm text-gray-300">Usually responds within 24 hours</span>
-                </div>
-                <div className="flex items-center px-4 py-2 bg-gray-800/50 rounded-full">
-                  <span className="text-pearl-400 mr-2">🚀</span>
-                  <span className="text-sm text-gray-300">Available for new projects</span>
-                </div>
-                <div className="flex items-center px-4 py-2 bg-gray-800/50 rounded-full">
-                  <span className="text-primary-400 mr-2">🤝</span>
-                  <span className="text-sm text-gray-300">Open to collaboration</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
